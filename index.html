@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINCE P13X</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="PRINCE P13X">
+    <meta property="og:description" content="Student & Creator · Telegram bots, channels & communities">
+    <meta property="og:image" content="https://i.postimg.cc/9F2p0Csn/8b93d1aead472b2dc5ae37c5b496e296.jpg">
+    <meta name="theme-color" content="#000000">
+</head>
+<body>
+    <div class="video-container">
+        <video id="bgVideo" autoplay muted loop playsinline poster="poster.jpg">
+            <source src="bg.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <button class="audio-control" id="audioControl" aria-label="Toggle sound">
+        <span class="audio-icon" id="audioIcon"><i class="fas fa-volume-mute"></i></span>
+        <span class="audio-text" id="audioText">Tap to play music</span>
+    </button>
+
+    <main class="page">
+        <section class="card">
+            <div class="logo">
+                <img src="https://i.postimg.cc/9F2p0Csn/8b93d1aead472b2dc5ae37c5b496e296.jpg" alt="Prince logo">
+            </div>
+            <h1 class="nick">PRINCE P13X</h1>
+            <p class="tagline">sᴛᴜᴅᴇɴᴛ &amp; ᴄʀᴇᴀᴛᴏʀ</p>
+
+            <div class="icon-links">
+                <a href="https://t.me/noomprox" target="_blank" rel="noopener" title="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/rocky_maurya_850" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/@crazy-jy-o9o?si=CpRUuO0VCBoPMSIa" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <h2 class="section-title">Connect</h2>
+            <div class="links">
+                <a class="link" href="https://t.me/noomprox" target="_blank" rel="noopener"><i class="fab fa-telegram-plane"></i><span>Telegram ID</span><em>@noomprox</em></a>
+                <a class="link" href="https://www.instagram.com/rocky_maurya_850" target="_blank" rel="noopener"><i class="fab fa-instagram"></i><span>Instagram</span><em>@rocky_maurya_850</em></a>
+            </div>
+
+            <h2 class="section-title">Groups</h2>
+            <div class="links">
+                <a class="link" href="https://t.me/+L9P7T7fTv94xY2Zh" target="_blank" rel="noopener"><i class="fas fa-users"></i><span>Telegram Group</span><em>Join chat</em></a>
+                <a class="link" href="https://t.me/Tubelight_lofi" target="_blank" rel="noopener"><i class="fas fa-headphones"></i><span>Tubelight Lofi</span><em>@Tubelight_lofi</em></a>
+            </div>
+
+            <h2 class="section-title">Bots</h2>
+            <div class="links">
+                <a class="link" href="https://t.me/NishaMusicBot" target="_blank" rel="noopener"><i class="fas fa-music"></i><span>Nisha Music Bot</span><em>@NishaMusicBot</em></a>
+                <a class="link" href="https://t.me/mksinfor_bot" target="_blank" rel="noopener"><i class="fas fa-robot"></i><span>MKS Info Bot</span><em>@mksinfor_bot</em></a>
+            </div>
+
+            <h2 class="section-title">Channels</h2>
+            <div class="links">
+                <a class="link" href="https://t.me/PRINCEsNETWORk" target="_blank" rel="noopener"><i class="fas fa-bullhorn"></i><span>PRINCE's Network</span><em>@PRINCEsNETWORk</em></a>
+                <a class="link" href="https://t.me/cpcoinofficial1" target="_blank" rel="noopener"><i class="fas fa-coins"></i><span>CP Coin Official</span><em>@cpcoinofficial1</em></a>
+            </div>
+
+            <div class="song-card">
+                <div class="song-cover"><img src="https://i.postimg.cc/vm2Y03RP/da8c498e73af2117fefdb65a59701a0f.jpg" alt="Cover"></div>
+                <div class="song-info">
+                    <div class="song-title">PRINCE P13X</div>
+                    <div class="song-author">sᴛᴜᴅᴇɴᴛ &amp; ᴄʀᴇᴀᴛᴏʀ</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const video = document.getElementById('bgVideo');
+        const control = document.getElementById('audioControl');
+        const icon = document.getElementById('audioIcon');
+        const text = document.getElementById('audioText');
+
+        function render() {
+            icon.innerHTML = video.muted
+                ? '<i class="fas fa-volume-mute"></i>'
+                : '<i class="fas fa-volume-up"></i>';
+            text.textContent = video.muted ? 'Tap to play music' : 'Tap to mute';
+        }
+
+        control.addEventListener('click', () => {
+            video.muted = !video.muted;
+            if (!video.muted) video.play().catch(() => {});
+            render();
+        });
+
+        setInterval(() => {
+            if (!video.muted) return;
+            text.classList.add('active');
+            setTimeout(() => text.classList.remove('active'), 1500);
+        }, 5000);
+        render();
+    </script>
+</body>
+</html>
